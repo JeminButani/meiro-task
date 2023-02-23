@@ -18,6 +18,9 @@ const Home = () => {
           <li>
             <Link to="/chart">Chart </Link>
           </li>
+          <li>
+            <Link to="/allChart">AllChart </Link>
+          </li>
         </ul>
       </nav>
 

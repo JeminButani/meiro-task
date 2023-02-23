@@ -41,6 +41,7 @@ const ChartPage = () => {
         data={{
           // Name of the variables on x-axies for each bar
           labels: xaxis,
+
           datasets: [
             {
               label: "Trips",

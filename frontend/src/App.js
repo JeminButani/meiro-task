@@ -4,6 +4,7 @@ import Dashboard from "./components/Dashboard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import ChartPage from "./components/ChartPage";
+import AllChart from "./components/AllChart";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="driver" element={<Dashboard />} />
         <Route exact path="city" element={<CityDashboard />} />
         <Route exact path="chart" element={<ChartPage />} />
+        <Route exact path="allChart" element={<AllChart />} />
       </Routes>
     </BrowserRouter>
   );
