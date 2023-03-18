@@ -11,7 +11,7 @@ const ChartPage = () => {
   var yaxisRevenue = [];
 
   useEffect(() => {
-    fetch("http://localhost:5000/totalCity", {
+    fetch("http://localhost:5000/totalDrivers", {
       method: "GET",
     })
       .then((res) => res.json())
