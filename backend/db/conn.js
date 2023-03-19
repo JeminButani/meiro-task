@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 mongoose.set("strictQuery", false);
 
-// mongodb://localhost:27017
+// mongodb://127.0.0.1:27017/
 //mongodb+srv://sohan:sohan@cluster0.kgsggc7.mongodb.net/?retryWrites=true&w=majority
 
 mongoose
