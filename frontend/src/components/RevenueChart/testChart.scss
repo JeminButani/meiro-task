@@ -1,0 +1,58 @@
+.mainWrapper{
+  position: absolute;
+  width: 80%;
+  margin-left: 10%;
+  border-radius: 12px;
+  overflow-x: hidden;
+  margin-top: 2%;
+  border: 5px solid gray;
+  padding: 1%;
+}
+
+
+.chartWrapper {
+  
+  position: relative;
+  overflow-x: auto;
+   left: 0;
+    top: 0;
+  // width: 80%;
+  // margin-left: 10%;
+  // border-radius: 8px;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+}
+
+.chartAreaWrapper {
+  width: 15000px;
+  overflow-x: auto;
+  
+}
+
+.chartAreaWrapper.chart {
+    position: absolute;
+   
+    pointer-events: none;
+  }
+
+
+// .overlap{
+//   width: 15000px;
+//     // background-color: blue;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     pointer-events: none;
+//     overflow-x: hidden;
+   
+// }
+
+
+// .hideme{
+//   width: 12000px;
+//   height: 400px;
+// }
+

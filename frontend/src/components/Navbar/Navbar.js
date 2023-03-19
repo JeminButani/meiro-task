@@ -8,7 +8,11 @@ const Navbar = () => {
       data-bs-theme="dark"
     >
       <div className="container-fluid">
-        <Link className="navbar-brand" style={{ fontWeight: "bolder" }} to="/">
+        <Link
+          className="navbar-brand"
+          style={{ fontWeight: "bolder", fontSize: "25px" }}
+          to="/"
+        >
           Meiro
         </Link>
         <button
@@ -30,6 +34,21 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link" to="/revenueChart">
+                RevenueChart
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/driverList">
+                DriverList
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/tripsChart">
+                TripsChart
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/driver">
                 DriverDetails
               </Link>
@@ -37,16 +56,6 @@ const Navbar = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/city">
                 CityDetails
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/testchart">
-                TestChart
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/testchart-2">
-                TestChart2
               </Link>
             </li>
           </ul>

@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 
 import "./App.css";
 import CityDashboard from "./components/CityDashboard";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/DriverDetails/Dashboard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
+import Home from "./components/Home/Home";
 import ChartPage from "./components/ChartPage";
 import AllChart from "./components/AllChart";
-import TestChart from "./components/testChart";
+import RevenueChart from "./components/RevenueChart/RevenueChart";
 import Navbar from "./components/Navbar/Navbar";
-import TestChart_2 from "./components/TestChart_2";
+import TripsChart from "./components/TripsChart/TripsChart";
+import DriverList from "./components/DriverList/DriverList";
 
 function App() {
   const [data, setData] = useState([]);
@@ -29,12 +30,17 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route index element={<Home />} />
-        <Route exact path="driver" element={<Dashboard />} />
-        <Route exact path="city" element={<CityDashboard />} />
-        <Route exact path="chart" element={<ChartPage />} />
-        <Route exact path="allChart" element={<AllChart />} />
-        <Route exact path="testchart" element={<TestChart data={data} />} />
-        <Route exact path="testchart-2" element={<TestChart_2 data={data} />} />
+        <Route exact path="driver" element={<Dashboard data={data} />} />
+        <Route exact path="city" element={<CityDashboard data={data} />} />
+        <Route exact path="chart" element={<ChartPage data={data} />} />
+        <Route exact path="allChart" element={<AllChart data={data} />} />
+        <Route
+          exact
+          path="revenueChart"
+          element={<RevenueChart data={data} />}
+        />
+        <Route exact path="tripsChart" element={<TripsChart data={data} />} />
+        <Route exact path="driverList" element={<DriverList data={data} />} />
       </Routes>
     </BrowserRouter>
   );
