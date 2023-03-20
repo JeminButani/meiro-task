@@ -1,6 +1,43 @@
+.space{
+  margin-top: 2%; 
+}
+
+.upper{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  .myform{
+    width: 30%;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 2%;
+  }
+
+  .details{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    
+    span{
+      font-weight: bolder;
+    }
+    .moreDetail{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      .bold{
+        font-weight: bolder;
+      }
+      .right{
+        margin-left: 2%;
+      }
+    }
+  }
+}
+
 .mainWrapper{
   position: absolute;
-  width: 80%;
+  width:  800%;
   margin-left: 10%;
   border-radius: 12px;
   overflow-x: hidden;

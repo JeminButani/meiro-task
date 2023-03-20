@@ -39,8 +39,6 @@ const DriverList = ({ data }) => {
             <th scope="col">Sr. No.</th>
             <th scope="col">Driver Id</th>
             <th scope="col">Name</th>
-            {/* <th scope="col">FirstName</th>
-            <th scope="col">LastName</th> */}
             <th scope="col">Licence No.</th>
             <th scope="col">BirthDate</th>
             <th scope="col">Work Status</th>
@@ -56,8 +54,6 @@ const DriverList = ({ data }) => {
                 <td>{srno}</td>
                 <td>{driver.did}</td>
                 <td>{driver.fname + " " + driver.lname}</td>
-                {/* <td>{driver.fname}</td>
-                <td>{driver.lname}</td> */}
                 <td>{driver.dlno}</td>
                 <td>{String(driver.bdate).slice(0, 10)}</td>
                 <td>{driver.working ? "Working" : "Not Working"}</td>
@@ -66,21 +62,6 @@ const DriverList = ({ data }) => {
               </tr>
             );
           })}
-          {/* <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr> */}
         </tbody>
       </table>
     </div>

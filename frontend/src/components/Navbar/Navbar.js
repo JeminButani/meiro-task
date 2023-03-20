@@ -39,23 +39,24 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/driverList">
-                DriverList
-              </Link>
-            </li>
-            <li className="nav-item">
               <Link className="nav-link" to="/tripsChart">
                 TripsChart
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/driver">
-                DriverDetails
+              <Link className="nav-link" to="/driverList">
+                DriverList
               </Link>
             </li>
+            {/* <li className="nav-item">
+              <Link className="nav-link" to="/tripsList">
+                TripsList
+              </Link>
+            </li> */}
+
             <li className="nav-item">
-              <Link className="nav-link" to="/city">
-                CityDetails
+              <Link className="nav-link" to="/driver">
+                DriverDetails
               </Link>
             </li>
           </ul>

@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 import "./App.css";
-import CityDashboard from "./components/CityDashboard";
 import Dashboard from "./components/DriverDetails/Dashboard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import ChartPage from "./components/ChartPage";
-import AllChart from "./components/AllChart";
 import RevenueChart from "./components/RevenueChart/RevenueChart";
 import Navbar from "./components/Navbar/Navbar";
 import TripsChart from "./components/TripsChart/TripsChart";
 import DriverList from "./components/DriverList/DriverList";
+import TripsList from "./components/TripsList/TripsList";
 
 function App() {
   const [data, setData] = useState([]);
@@ -31,9 +29,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route index element={<Home />} />
         <Route exact path="driver" element={<Dashboard data={data} />} />
-        <Route exact path="city" element={<CityDashboard data={data} />} />
-        <Route exact path="chart" element={<ChartPage data={data} />} />
-        <Route exact path="allChart" element={<AllChart data={data} />} />
         <Route
           exact
           path="revenueChart"
@@ -41,6 +36,7 @@ function App() {
         />
         <Route exact path="tripsChart" element={<TripsChart data={data} />} />
         <Route exact path="driverList" element={<DriverList data={data} />} />
+        <Route exact path="tripsList" element={<TripsList data={data} />} />
       </Routes>
     </BrowserRouter>
   );
