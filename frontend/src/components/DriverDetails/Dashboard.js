@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Chart } from "react-chartjs-2";
 import { Line } from "react-chartjs-2";
 import "./driverDetails.scss";
 
 const Dashboard = ({ data }) => {
+  const navigate = useNavigate();
   const [allData, setAllData] = useState([]);
-  const [allTripsTemp, setAllTripsTemp] = useState([]);
+  const [updateData, setUpdateData] = useState(null);
   const [allRevenueTemp, setAllRevenueTemp] = useState([]);
   const [time, setTime] = useState([]);
   // const [dname, setDname] = useState("");
@@ -38,6 +39,17 @@ const Dashboard = ({ data }) => {
     return total;
   };
 
+  const handleClick = () => {
+    if (updateData === null) {
+      alert(
+        "Please Enter the Driver name and the id and Submit , Then try update!"
+      );
+    } else {
+      navigate("/driverUpdate", { state: updateData });
+      console.log("update");
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -50,6 +62,8 @@ const Dashboard = ({ data }) => {
         // setBdate(String(data.bdate).slice(0, 10));
 
         var obj = {};
+        obj.id = data._id;
+        obj.tripsArr = data.trips;
         obj.fname = data.fname;
         obj.lname = data.lname;
         obj.dlno = data.dlno;
@@ -60,6 +74,7 @@ const Dashboard = ({ data }) => {
         obj.revenue = "Rs. " + TotalRevenue(data.trips);
 
         setDrdata(obj);
+        setUpdateData(obj);
 
         const temp = data.trips;
         temp.forEach((trip) => {
@@ -71,13 +86,16 @@ const Dashboard = ({ data }) => {
       }
     });
   };
+  console.log(updateData);
 
   return (
     <>
       <div className="upper">
         <form className="myform" onSubmit={handleSubmit}>
           <div className="form-groupspace">
-            <label>Driver Name</label>
+            <label style={{ fontWeight: "bolder", marginBottom: "1%" }}>
+              Driver Name :
+            </label>
             <input
               type="text"
               name="name"
@@ -87,7 +105,9 @@ const Dashboard = ({ data }) => {
             />
           </div>
           <div className="form-group space">
-            <label>Driver Id</label>
+            <label style={{ fontWeight: "bolder", marginBottom: "1%" }}>
+              Driver Id :
+            </label>
             <input
               type="text"
               name="id"
@@ -96,6 +116,7 @@ const Dashboard = ({ data }) => {
               placeholder="Enter Driver Id"
             />
           </div>
+
           <button type="submit" className="btn btn-primary space">
             Submit
           </button>
@@ -149,6 +170,13 @@ const Dashboard = ({ data }) => {
                 </tbody>
               </table>
             </div>
+            <button
+              type="button"
+              className="btn btn-primary space updateBtn"
+              onClick={handleClick}
+            >
+              Update
+            </button>
           </div>
         </div>
       </div>

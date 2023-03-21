@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar/Navbar";
 import TripsChart from "./components/TripsChart/TripsChart";
 import DriverList from "./components/DriverList/DriverList";
 import TripsList from "./components/TripsList/TripsList";
+import DriverUpdate from "./components/DriverUpdate/DriverUpdate";
 
 function App() {
   const [data, setData] = useState([]);
@@ -37,6 +38,7 @@ function App() {
         <Route exact path="tripsChart" element={<TripsChart data={data} />} />
         <Route exact path="driverList" element={<DriverList data={data} />} />
         <Route exact path="tripsList" element={<TripsList data={data} />} />
+        <Route exact path="driverUpdate" element={<DriverUpdate />} />
       </Routes>
     </BrowserRouter>
   );

@@ -176,6 +176,29 @@ app.get("/test", async (req, res) => {
   }
 });
 
+app.post("/updateDriverDetail", async (req, res) => {
+  const { id, fname, lname, dlno, bdate, did, working, trips } = req.body;
+
+  if (newDriver.findById(id) == undefined) {
+    return res.status(404).send(`No post with id: ${id}`);
+  } else {
+    const updatedDriver = {
+      did,
+      fname,
+      lname,
+      bdate,
+      dlno,
+      working,
+      trips,
+      _id: id,
+    };
+
+    await newDriver.findByIdAndUpdate(id, updatedDriver, { new: true });
+
+    res.json(updatedDriver);
+  }
+});
+
 app.listen(port, () => {
   console.log(`serve Is Live at http://127.0.0.1:${port}`);
 });
