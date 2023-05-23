@@ -6,7 +6,7 @@ mongoose.set("strictQuery", false);
 //mongodb+srv://sohan:sohan@cluster0.kgsggc7.mongodb.net/?retryWrites=true&w=majority
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/", {
+  .connect("mongodb+srv://sohan:sohan@cluster0.kgsggc7.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     // dbName: "Driver",

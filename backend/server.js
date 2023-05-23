@@ -6,7 +6,6 @@ require("./model/mySchema");
 require("./model/myCity");
 require("./model/allMonths");
 require("./model/driverDetails");
-require("./model/test");
 
 const app = express();
 
@@ -14,12 +13,11 @@ const driver = mongoose.model("driverdetails");
 const city = mongoose.model("citydetails");
 const allmonth = mongoose.model("allyeardetails");
 const newDriver = mongoose.model("newdriverdetails");
-const test = mongoose.model("test");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-
+  
 const port = 5000;
 
 app.get("/totalDrivers", async (req, res) => {
@@ -69,7 +67,7 @@ app.get("/newDrivers", async (req, res) => {
 
 // Calculate the total revenue for each city
 async function calTotalRevenue(city) {
-  const data = await test.find({});
+  const data = await newDriver.find({});
   var total = 0;
   const ans = [];
   data.forEach((e) => {
@@ -86,7 +84,7 @@ async function calTotalRevenue(city) {
 
 // get total revenue of each driver
 async function getTotalRevenue() {
-  const data = await test.find({});
+  const data = await newDriver.find({});
   const ans = [];
   data.forEach((e) => {
     const temp = e.trips;
@@ -101,7 +99,7 @@ async function getTotalRevenue() {
 
 // get total no. of trips of each driver
 async function getTotalTrips() {
-  const data = await test.find({});
+  const data = await newDriver.find({});
   const ans = [];
   data.forEach((e) => {
     const temp = e.trips;
@@ -116,7 +114,7 @@ async function getTotalTrips() {
 
 // get all the names of the drivers
 async function getDriverNames() {
-  const data = await test.find({});
+  const data = await newDriver.find({});
   const ans = [];
   data.forEach((e) => {
     ans.push(e.fname);
@@ -161,6 +159,7 @@ app.get("/getNames", async (req, res) => {
   }
 });
 
+
 // function to call all data
 async function allData() {
   const data = await newDriver.find({});
@@ -198,6 +197,9 @@ app.post("/updateDriverDetail", async (req, res) => {
     res.json(updatedDriver);
   }
 });
+
+
+
 
 app.listen(port, () => {
   console.log(`serve Is Live at http://127.0.0.1:${port}`);
